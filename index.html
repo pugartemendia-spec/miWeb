@@ -767,7 +767,7 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="about-text reveal">
+    <div class="about-text reveal visible">
       <div class="section-label">About</div>
       <h2 class="section-title">Ingeniería con propósito,<br /><em>liderazgo con claridad.</em></h2>
       <p>
@@ -782,7 +782,7 @@
         <span class="tag">Portugués Básico</span>
       </div>
     </div>
-    <div class="about-meta reveal" style="transition-delay:0.15s">
+    <div class="about-meta reveal visible" style="transition-delay:0.15s">
       <div class="about-stat">
         <div class="about-stat-num">20<span>+</span></div>
         <div class="about-stat-label">Años de experiencia</div>
@@ -803,14 +803,14 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="experience-header">
-      <div class="reveal">
+      <div class="reveal visible">
         <div class="section-label">Experience</div>
         <h2 class="section-title">20 años construyendo<br /><em>organizaciones técnicas.</em></h2>
       </div>
     </div>
     <div class="exp-list">
 
-      <div class="exp-item open reveal" onclick="this.classList.toggle('open')">
+      <div class="exp-item open reveal visible" onclick="this.classList.toggle('open')">
         <div class="exp-meta">
           <div class="exp-date">Jul 2022 — Dic 2025</div>
           <span class="exp-level">Engineering Manager</span>
@@ -825,7 +825,7 @@
         <div class="exp-toggle">+</div>
       </div>
 
-      <div class="exp-item reveal" onclick="this.classList.toggle('open')">
+      <div class="exp-item reveal visible" onclick="this.classList.toggle('open')">
         <div class="exp-meta">
           <div class="exp-date">Nov 2021 — Jun 2022</div>
           <span class="exp-level">Delivery Manager</span>
@@ -840,7 +840,7 @@
         <div class="exp-toggle">+</div>
       </div>
 
-      <div class="exp-item reveal" onclick="this.classList.toggle('open')">
+      <div class="exp-item reveal visible" onclick="this.classList.toggle('open')">
         <div class="exp-meta">
           <div class="exp-date">Mar 2019 — Nov 2021</div>
           <span class="exp-level">Delivery Manager</span>
@@ -855,7 +855,7 @@
         <div class="exp-toggle">+</div>
       </div>
 
-      <div class="exp-item reveal" onclick="this.classList.toggle('open')">
+      <div class="exp-item reveal visible" onclick="this.classList.toggle('open')">
         <div class="exp-meta">
           <div class="exp-date">May 2015 — Ene 2019</div>
           <span class="exp-level">Delivery Manager</span>
@@ -870,7 +870,7 @@
         <div class="exp-toggle">+</div>
       </div>
 
-      <div class="exp-item reveal" onclick="this.classList.toggle('open')">
+      <div class="exp-item reveal visible" onclick="this.classList.toggle('open')">
         <div class="exp-meta">
           <div class="exp-date">Abr 2012 — May 2015</div>
           <span class="exp-level">Líder de Sistemas</span>
@@ -885,7 +885,7 @@
         <div class="exp-toggle">+</div>
       </div>
 
-      <div class="exp-item reveal" onclick="this.classList.toggle('open')">
+      <div class="exp-item reveal visible" onclick="this.classList.toggle('open')">
         <div class="exp-meta">
           <div class="exp-date">Feb 2004 — Mar 2012</div>
           <span class="exp-level">IT Leadership</span>
@@ -907,12 +907,12 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="reveal">
+    <div class="reveal visible">
       <div class="section-label">Skills</div>
       <h2 class="section-title">Las herramientas<br />del <em>oficio.</em></h2>
     </div>
     <div class="skills-grid">
-      <div class="skill-card reveal">
+      <div class="skill-card reveal visible">
         <div class="skill-card-title">Cloud & Arquitectura</div>
         <div class="skill-pills">
           <span class="skill-pill">AWS Cloud-Native</span>
@@ -921,7 +921,7 @@
           <span class="skill-pill">SRE & Observabilidad</span>
         </div>
       </div>
-      <div class="skill-card reveal" style="transition-delay:0.1s">
+      <div class="skill-card reveal visible" style="transition-delay:0.1s">
         <div class="skill-card-title">Desarrollo</div>
         <div class="skill-pills">
           <span class="skill-pill">Go</span>
@@ -932,7 +932,7 @@
           <span class="skill-pill">SQL & NoSQL</span>
         </div>
       </div>
-      <div class="skill-card reveal" style="transition-delay:0.2s">
+      <div class="skill-card reveal visible" style="transition-delay:0.2s">
         <div class="skill-card-title">Herramientas</div>
         <div class="skill-pills">
           <span class="skill-pill">Grafana</span>
@@ -943,7 +943,7 @@
           <span class="skill-pill">Null Platform</span>
         </div>
       </div>
-      <div class="skill-card reveal" style="transition-delay:0.3s">
+      <div class="skill-card reveal visible" style="transition-delay:0.3s">
         <div class="skill-card-title">Liderazgo & Gestión</div>
         <div class="skill-pills">
           <span class="skill-pill">Engineering Management</span>
@@ -998,15 +998,8 @@
     <div class="footer-copy">Buenos Aires, Argentina · 2026</div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Nav shadow on scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled',
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); })
