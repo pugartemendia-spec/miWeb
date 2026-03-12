@@ -87,157 +87,101 @@
     .nav-links a:hover { color: var(--black); }
     .nav-links a:hover::after { width: 100%; }
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      padding: 0 3rem;
+    /* ── HERO MEJORADO ── */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .hero-meta-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-location {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--grey-400);
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .hero-aside {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding-bottom: 6rem;
-      padding-top: 7rem;
-      position: relative;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .hero-photo-wrap {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
       overflow: hidden;
+      border: 3px solid var(--orange);
+      box-shadow: 0 0 0 6px rgba(240,90,40,0.1);
     }
-
-    .hero-location {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--grey-400);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
+    
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    
+    .hero-quick-stats {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .hero-location::before {
-      content: '●';
-      color: var(--orange);
-      font-size: 0.5rem;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3.5rem, 8vw, 8rem);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      color: var(--black);
-      max-width: 900px;
-    }
-    .hero-title em {
-      font-style: italic;
-      font-weight: 600;
-      color: var(--orange);
-    }
-
-    .hero-sub {
-      margin-top: 2rem;
-      font-size: 1.05rem;
-      color: var(--grey-600);
-      max-width: 500px;
-      line-height: 1.7;
-      font-weight: 300;
-    }
-
-    .hero-tags {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-    .tag {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
-      border: 1px solid var(--grey-200);
-      color: var(--grey-600);
-      border-radius: 2px;
-    }
-    .tag.orange {
-      border-color: var(--orange);
-      color: var(--orange);
-      background: rgba(240,90,40,0.04);
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2.5rem;
+      gap: 1.5rem;
+      justify-content: center;
       flex-wrap: wrap;
     }
-    .btn {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.9rem 2rem;
-      border: 1.5px solid var(--black);
-      color: var(--black);
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      display: inline-block;
-    }
-    .btn:hover {
-      background: var(--black);
-      color: var(--white);
-    }
-    .btn.primary {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: var(--white);
-    }
-    .btn.primary:hover {
-      background: var(--orange-light);
-      border-color: var(--orange-light);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem;
-      right: 3rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--grey-400);
-      writing-mode: vertical-rl;
+    
+    .hero-stat {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.6rem;
+      text-align: center;
     }
-    .hero-scroll::before {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 48px;
-      background: linear-gradient(to bottom, var(--orange), transparent);
-    }
-
-    .hero-bg-text {
-      position: absolute;
-      right: -2rem;
-      top: 50%;
-      transform: translateY(-50%);
+    
+    .hero-stat-num {
       font-family: var(--font-display);
-      font-size: 22vw;
+      font-size: 1.6rem;
       font-weight: 800;
-      color: var(--grey-100);
-      letter-spacing: -0.05em;
-      pointer-events: none;
-      user-select: none;
-      z-index: 0;
+      color: var(--black);
       line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    
+    .hero-stat-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--grey-400);
+      margin-top: 0.3rem;
+      text-align: center;
+    }
+    
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-aside {
+        flex-direction: row;
+        justify-content: flex-start;
+        order: -1;
+      }
+      .hero-photo-wrap {
+        width: 140px;
+        height: 140px;
+      }
     }
 
     /* ── SECTIONS SHARED ── */
@@ -749,28 +693,67 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-location">46 años</div>
-    <div class="hero-location">Buenos Aires, Argentina</div>
-    <h1 class="hero-title reveal">Pedro de<br />Ugartemendía<br /><em>Engineering Manager</em></h1>
-    <p class="hero-sub reveal" style="transition-delay:0.1s">
-      Más de 20 años en ingeniería de software. Más de 10 liderando equipos en fintech, pagos y plataformas digitales de alta escala.
-    </p>
-    <div class="hero-tags reveal" style="transition-delay:0.2s">
-      <span class="tag orange">Engineering Management</span>
-      <span class="tag">Fintech</span>
-      <span class="tag">Cloud-Native</span>
-      <span class="tag">Liderazgo de equipos</span>
-    </div>
-    <div class="hero-ctas reveal" style="transition-delay:0.3s">
-      <a href="#experience" class="btn primary">Ver Experiencia</a>
-      <a href="#contact" class="btn">Contacto</a>
-    </div>
-    <div class="hero-scroll">scroll</div>
-  </section>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-text">EM</div>
 
-  <div class="divider"></div>
+  <div class="hero-inner">
+
+    <!-- Columna izquierda: texto -->
+    <div class="hero-content">
+      <div class="hero-meta-row">
+        <span class="hero-location">📍 Buenos Aires, Argentina</span>
+        <span class="hero-location">🎂 46 años</span>
+        <span class="hero-location">🟢 Disponible</span>
+      </div>
+
+      <h1 class="hero-title reveal">Pedro de<br />Ugartemendía<br /><em>Engineering Manager</em></h1>
+
+      <p class="hero-sub reveal" style="transition-delay:0.1s">
+        Más de 20 años en ingeniería de software. Más de 10 liderando equipos en fintech, pagos y plataformas digitales de alta escala.
+      </p>
+
+      <div class="hero-tags reveal" style="transition-delay:0.2s">
+        <span class="tag orange">Engineering Management</span>
+        <span class="tag">Fintech</span>
+        <span class="tag">Cloud-Native</span>
+        <span class="tag">Liderazgo de equipos</span>
+      </div>
+
+      <div class="hero-ctas reveal" style="transition-delay:0.3s">
+        <a href="#experience" class="btn primary">Ver Experiencia</a>
+        <a href="#contact" class="btn">Contacto</a>
+        <a href="CV-UgartemendiaPedro.pdf" download class="btn">Descargar CV</a>
+      </div>
+    </div>
+
+    <!-- Columna derecha: foto + stats -->
+    <div class="hero-aside reveal" style="transition-delay:0.2s">
+      <div class="hero-photo-wrap">
+        <img src="foto.jpg" alt="Pedro de Ugartemendía" class="hero-photo" />
+      </div>
+      <div class="hero-quick-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">20<span style="color:var(--orange)">+</span></span>
+          <span class="hero-stat-label">Años de experiencia</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">70<span style="color:var(--orange)">+</span></span>
+          <span class="hero-stat-label">Personas lideradas</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">99.9<span style="color:var(--orange)">%</span></span>
+          <span class="hero-stat-label">Availability</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-scroll">scroll</div>
+</section>
+<div class="divider"></div>
+
 
   <!-- ABOUT -->
   <section id="about">
@@ -972,10 +955,10 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-label">Contact</div>
-    <h2 class="section-title reveal">Construyamos algo<br /><em>que valga la pena.</em></h2>
+    <h2 class="section-title reveal">Construyamos<br /><em>con valor.</em></h2>
     <div class="contact-grid">
       <p class="contact-intro reveal" style="transition-delay:0.1s">
-        Abierto a conversaciones interesantes — desafíos de liderazgo técnico, colaboraciones, oportunidades en fintech o simplemente conectar con otros builders y líderes de ingeniería.
+        Abierto a conversaciones interesantes, desafíos de liderazgo técnico, colaboraciones, oportunidades en fintech o simplemente conectar con otros builders y líderes de ingeniería.
       </p>
       <div class="contact-links reveal" style="transition-delay:0.2s">
         <a href="mailto:pugartemendia@gmail.com" class="contact-link">
@@ -1005,7 +988,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <a href="#hero" class="nav-logo">PEDRO<span>.</span>DU</a>
+    <a href="#hero" class="nav-logo">PEDRO<span>.</span>UGARTEMENDIA</a>
     <div class="footer-copy">Buenos Aires, Argentina · 2026</div>
   </footer>
 
